@@ -20,7 +20,7 @@ class QRMainWindow(QtWidgets.QMainWindow):
         qr_code = qrcode.make(data)
         self.qr_code = qr_code
         
-        qr_img = ImageQt.ImageQt(qr_code.get_image())
+        qr_img = ImageQt.ImageQt(qr_code.get_image().resize((300, 300)))
         qr_img = QtGui.QPixmap.fromImage(qr_img)
         self.encode_image.setPixmap(qr_img)
     
@@ -39,7 +39,7 @@ class QRMainWindow(QtWidgets.QMainWindow):
         if qr_file_path[0]:
             with Image.open(qr_file_path[0]) as img:
                 qr_code = pyzbar.decode(img)
-                qr_img = ImageQt.ImageQt(img)
+                qr_img = ImageQt.ImageQt(img.resize((300, 300)))
                 qr_img = QtGui.QPixmap.fromImage(qr_img)
                 self.decode_image.setPixmap(qr_img)
             if qr_code:
