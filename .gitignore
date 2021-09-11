@@ -1,1 +1,8 @@
+# Python stuff
 venv/
+__pycache__/
+
+# QR codes
+*.jpeg
+*.jpg
+*.png
