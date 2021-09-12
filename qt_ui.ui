@@ -10,11 +10,17 @@
     <height>700</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background: white;</string>
+   <string notr="true">background: #f5f5ff;</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTabWidget" name="tabWidget">
@@ -23,28 +29,31 @@
       <x>0</x>
       <y>0</y>
       <width>500</width>
-      <height>700</height>
+      <height>720</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Roboto</family>
+      <family>Roboto Medium</family>
       <pointsize>10</pointsize>
      </font>
     </property>
     <property name="cursor">
-     <cursorShape>ArrowCursor</cursorShape>
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
-     <string notr="true">QTabBar::tab {
-  color: #171717;
-  background: transparent;
-  font-weight: bold;
-  letter-spacing: 1px;
+     <string notr="true">QTabWidget {
+  border: 0;
+}
+
+QTabBar::tab {
+  color: #222255;
+  background: white;
   width: 200px;
   height: 40px;
   padding-left: 25px;
   padding-right: 25px;
+  border-bottom: 3px solid white;
 }
 
 QTabBar::tab:hover {
@@ -88,7 +97,7 @@ QTabBar::tab:selected {
       <property name="geometry">
        <rect>
         <x>80</x>
-        <y>50</y>
+        <y>30</y>
         <width>341</width>
         <height>80</height>
        </rect>
@@ -110,12 +119,12 @@ QTabBar::tab:selected {
          </property>
          <property name="font">
           <font>
-           <family>PT Sans</family>
+           <family>Roboto Medium</family>
            <pointsize>10</pointsize>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: #777777;</string>
+          <string notr="true">color: #222255;</string>
          </property>
          <property name="text">
           <string>Zu kodierender Text</string>
@@ -126,18 +135,29 @@ QTabBar::tab:selected {
         <widget class="QLineEdit" name="encode_text_field">
          <property name="font">
           <font>
-           <family>PT Sans</family>
-           <pointsize>12</pointsize>
+           <family>Roboto</family>
+           <pointsize>11</pointsize>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">background: #eaeaea;
-/* border: 1px solid #dadada; */
-border-radius: 5px;
-padding: 8px 14px 8px 14px;</string>
+          <string notr="true">QLineEdit {
+  background: #eaeaea;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  color: #333366;
+  line-height: 4px;
+  padding: 8px 14px 8px 14px;
+}
+
+QLineEdit:hover, QLineEdit:focus {
+  border: 2px solid #2A50D3;
+}</string>
          </property>
          <property name="text">
-          <string>Gosig Golden ist süß!</string>
+          <string/>
+         </property>
+         <property name="placeholderText">
+          <string>Text eingeben ...</string>
          </property>
         </widget>
        </item>
@@ -152,6 +172,9 @@ padding: 8px 14px 8px 14px;</string>
         <height>300</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 5px;</string>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -160,15 +183,15 @@ padding: 8px 14px 8px 14px;</string>
       <property name="geometry">
        <rect>
         <x>80</x>
-        <y>150</y>
+        <y>120</y>
         <width>340</width>
-        <height>46</height>
+        <height>40</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Roboto</family>
-        <pointsize>11</pointsize>
+        <pointsize>10</pointsize>
         <weight>75</weight>
         <bold>true</bold>
        </font>
@@ -181,7 +204,6 @@ padding: 8px 14px 8px 14px;</string>
 border-radius: 5px;
 background: #2A50D3;
 color: white;
-letter-spacing: 1px;
 font-weight: bold;</string>
       </property>
       <property name="text">
@@ -194,13 +216,13 @@ font-weight: bold;</string>
         <x>80</x>
         <y>580</y>
         <width>340</width>
-        <height>46</height>
+        <height>40</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Roboto</family>
-        <pointsize>11</pointsize>
+        <pointsize>10</pointsize>
         <weight>75</weight>
         <bold>true</bold>
        </font>
@@ -209,12 +231,13 @@ font-weight: bold;</string>
        <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="styleSheet">
-       <string notr="true">border: 0;
-border-radius: 5px;
-background: #2A50D3;
-color: white;
-letter-spacing: 1px;
-font-weight: bold;</string>
+       <string notr="true">QPushButton {
+  border: 0;
+  border-radius: 5px;
+  background: #2A50D3;
+  color: white;
+  font-weight: bold;
+}</string>
       </property>
       <property name="text">
        <string>SPEICHERN</string>
@@ -237,12 +260,12 @@ font-weight: bold;</string>
       </property>
       <property name="font">
        <font>
-        <family>PT Sans</family>
+        <family>Roboto Medium</family>
         <pointsize>10</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #777777;</string>
+       <string notr="true">color: #222255;</string>
       </property>
       <property name="text">
        <string>Generierter QR-Code</string>
@@ -264,6 +287,39 @@ font-weight: bold;</string>
        <enum>Qt::Horizontal</enum>
       </property>
      </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>170</y>
+        <width>178</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Roboto</family>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+  border: 0;
+  color: #2A50D3;
+  text-align: left;
+}
+
+QPushButton:hover {
+  text-decoration: underline;
+}</string>
+      </property>
+      <property name="text">
+       <string>Erweiterte Einstellungen öffnen</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_2">
      <property name="cursor">
@@ -278,13 +334,13 @@ font-weight: bold;</string>
         <x>80</x>
         <y>370</y>
         <width>340</width>
-        <height>46</height>
+        <height>40</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Roboto</family>
-        <pointsize>11</pointsize>
+        <pointsize>10</pointsize>
         <weight>75</weight>
         <bold>true</bold>
        </font>
@@ -297,7 +353,6 @@ font-weight: bold;</string>
 border-radius: 5px;
 background: #2A50D3;
 color: white;
-letter-spacing: 1px;
 font-weight: bold;</string>
       </property>
       <property name="text">
@@ -330,12 +385,12 @@ font-weight: bold;</string>
          </property>
          <property name="font">
           <font>
-           <family>PT Sans</family>
+           <family>Roboto Medium</family>
            <pointsize>10</pointsize>
           </font>
          </property>
          <property name="styleSheet">
-          <string notr="true">color: #777777;</string>
+          <string notr="true">color: #171717;</string>
          </property>
          <property name="text">
           <string>Dekodierter Text</string>
@@ -346,14 +401,18 @@ font-weight: bold;</string>
         <widget class="QLineEdit" name="decode_text_field">
          <property name="font">
           <font>
-           <family>PT Sans</family>
-           <pointsize>12</pointsize>
+           <family>Roboto</family>
+           <pointsize>11</pointsize>
           </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>IBeamCursor</cursorShape>
          </property>
          <property name="styleSheet">
           <string notr="true">background: #eaeaea;
-/* border: 1px solid #dadada; */
+border: 2px solid transparent;
 border-radius: 5px;
+color: #333366;
 padding: 8px 14px 8px 14px;</string>
          </property>
          <property name="text">
@@ -361,6 +420,12 @@ padding: 8px 14px 8px 14px;</string>
          </property>
          <property name="readOnly">
           <bool>true</bool>
+         </property>
+         <property name="placeholderText">
+          <string>Hier wird der dekodierter QR-Code angezeigt.</string>
+         </property>
+         <property name="cursorMoveStyle">
+          <enum>Qt::LogicalMoveStyle</enum>
          </property>
         </widget>
        </item>
@@ -370,10 +435,13 @@ padding: 8px 14px 8px 14px;</string>
       <property name="geometry">
        <rect>
         <x>100</x>
-        <y>50</y>
+        <y>30</y>
         <width>300</width>
         <height>300</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 5px;</string>
       </property>
       <property name="text">
        <string/>
@@ -406,6 +474,9 @@ padding: 8px 14px 8px 14px;</string>
       <height>33</height>
      </rect>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background: white;</string>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -422,6 +493,9 @@ padding: 8px 14px 8px 14px;</string>
     <property name="mouseTracking">
      <bool>false</bool>
     </property>
+    <property name="styleSheet">
+     <string notr="true">background: white;</string>
+    </property>
     <property name="text">
      <string/>
     </property>
@@ -434,6 +508,9 @@ padding: 8px 14px 8px 14px;</string>
       <width>51</width>
       <height>33</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background: white;</string>
     </property>
     <property name="text">
      <string/>
