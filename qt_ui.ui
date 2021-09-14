@@ -17,7 +17,7 @@
    </sizepolicy>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>QR Code Wizard</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background: #f5f5ff;</string>

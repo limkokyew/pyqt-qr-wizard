@@ -1,3 +1,4 @@
+import os
 import qrcode
 import sys
 from pyzbar import pyzbar
@@ -10,6 +11,7 @@ class QRMainWindow(QtWidgets.QMainWindow):
         super(QRMainWindow, self).__init__()
         uic.loadUi("qt_ui.ui", self)
         self.qr_code = None
+        self.last_visited_dir = "."
         self.generate_qr_button.clicked.connect(self.generate_qr)
         self.save_qr_button.clicked.connect(self.save_qr)
         self.upload_qr_button.clicked.connect(self.upload_qr)
@@ -27,14 +29,18 @@ class QRMainWindow(QtWidgets.QMainWindow):
     def save_qr(self):
         if self.qr_code is not None:
             file_name = QtWidgets.QFileDialog.getSaveFileName(
-                self, "QR-Code speichern", ".", "*.png"
+                self, "QR-Code speichern", self.last_visited_dir, "*.png"
             )
             if file_name[0]:
                 self.qr_code.save(file_name[0])
+                self.last_visited_dir = os.path.dirname(file_name[0])
 
     def upload_qr(self):
         qr_file_path = QtWidgets.QFileDialog.getOpenFileName(
-            self, "QR-Code hochladen", ".", "Bilder (*.jpg *.jpeg *.png)"
+            self,
+            "QR-Code hochladen",
+            self.last_visited_dir,
+            "Bilder (*.jpg *.jpeg *.png)"
         )
         if qr_file_path[0]:
             with Image.open(qr_file_path[0]) as img:
@@ -46,6 +52,7 @@ class QRMainWindow(QtWidgets.QMainWindow):
                 self.decode_text_field.setText(qr_code[0].data.decode("utf-8"))
             else:
                 self.decode_text_field.setText("Es wurde kein QR-Code erkannt.")
+            self.last_visited_dir = os.path.dirname(file_name[0])
 
 def main():
     app = QtWidgets.QApplication(sys.argv)
