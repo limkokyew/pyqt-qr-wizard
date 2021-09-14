@@ -52,7 +52,7 @@ class QRMainWindow(QtWidgets.QMainWindow):
                 self.decode_text_field.setText(qr_code[0].data.decode("utf-8"))
             else:
                 self.decode_text_field.setText("Es wurde kein QR-Code erkannt.")
-            self.last_visited_dir = os.path.dirname(file_name[0])
+            self.last_visited_dir = os.path.dirname(qr_file_path[0])
 
 def main():
     app = QtWidgets.QApplication(sys.argv)
