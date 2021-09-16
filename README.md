@@ -4,7 +4,7 @@ This is a simple PyQt5 application to generate and decode
 app:
 
 <p align="center">
- <img src=".github/preview_image.png" alt="Screenshot of application">
+ <img src=".github/preview_image.PNG" alt="Screenshot of application">
 </p>
 
 ## Run with ``python``
